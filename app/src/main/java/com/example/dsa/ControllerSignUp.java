@@ -6,6 +6,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -14,15 +16,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ControllerSignUp implements Callback<CompleteCredentials> {
 
-    static final String BASE_URL = "https://192.168.1.42:8080/";
+    static final String BASE_URL = "http://10.0.2.2:8080/";
 
     public void start(CompleteCredentials c) {
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
 
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
+                .client(client)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 

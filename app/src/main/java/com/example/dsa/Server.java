@@ -9,7 +9,7 @@ import retrofit2.http.*;
 
 public interface Server {
     @POST("/dsaApp/auth/login")
-    Call<Credentials> login(@Body Credentials c);
+    Call<Void> login(@Body Credentials c);
 
     @POST("/dsaApp/auth/signup")
     Call<CompleteCredentials> signUp(@Body CompleteCredentials c);
