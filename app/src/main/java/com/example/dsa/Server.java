@@ -1,0 +1,16 @@
+package com.example.dsa;
+
+import com.example.dsa.models.CompleteCredentials;
+import com.example.dsa.models.Credentials;
+
+import retrofit2.Call;
+import retrofit2.http.*;
+
+
+public interface Server {
+    @POST("/dsaApp/auth/login")
+    Call<Credentials> login(@Body Credentials c);
+
+    @POST("/dsaApp/auth/signup")
+    Call<CompleteCredentials> signUp(@Body CompleteCredentials c);
+}
