@@ -1,6 +1,8 @@
 package com.example.dsa;
 
 import android.view.View;
+import android.widget.Toast;
+
 import com.example.dsa.models.Credentials;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
@@ -17,8 +19,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ControllerLogin implements Callback<Void> {
 
     static final String BASE_URL = "http://10.0.2.2:8080/";
+    Toast t;
+    MainActivity main;
 
-    public void start(Credentials c) {
+    public void start(MainActivity main, Credentials c) {
+        this.main = main;
+        this.t = main.toast;
+
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -42,16 +49,17 @@ public class ControllerLogin implements Callback<Void> {
     @Override
     public void onResponse(Call<Void> call, Response<Void> response) {
         if(response.isSuccessful()) {
-            System.out.println("Sign in successful!");
-            //Snackbar snackbar = Snackbar.make(v, "Log in successful!", 5);
+            System.out.println("Login successful!");
+            Toast.makeText(main.getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
         } else {
             System.out.println("Error: " + response.errorBody());
-            //Snackbar snackbar = Snackbar.make(v, "Log in successful!", 5);
+            Toast.makeText(main.getApplicationContext(), "Error: Wrong credentials.", Toast.LENGTH_LONG).show();
         }
     }
 
     @Override
     public void onFailure(Call<Void> call, Throwable t) {
+        Toast.makeText(main.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
         t.printStackTrace();
     }
 }

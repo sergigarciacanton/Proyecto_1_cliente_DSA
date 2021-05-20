@@ -5,11 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsa.models.CompleteCredentials;
 import com.example.dsa.models.Credentials;
-
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView mailText;
     TextView signUpTextView;
     Button loginBtn;
+    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logInBtn_Click(View v) {
-        if(loginBtn.getText() != "Log in") {
+        if(loginBtn.getText() == "Log in") {
             ControllerLogin ctrl = new ControllerLogin();
-            ctrl.start(new Credentials(usernameIn.getText().toString(), passwordIn.getText().toString()));
+            ctrl.start(this, new Credentials(usernameIn.getText().toString(), passwordIn.getText().toString()));
         }
         else {
             ControllerSignUp ctrl = new ControllerSignUp();
-            ctrl.start(new CompleteCredentials(usernameIn.getText().toString(), passwordIn.getText().toString(), nameIn.getText().toString(), mailIn.getText().toString()));
+            ctrl.start(this , new CompleteCredentials(usernameIn.getText().toString(), passwordIn.getText().toString(), nameIn.getText().toString(), mailIn.getText().toString()));
         }
     }
 

@@ -12,5 +12,5 @@ public interface Server {
     Call<Void> login(@Body Credentials c);
 
     @POST("/dsaApp/auth/signup")
-    Call<CompleteCredentials> signUp(@Body CompleteCredentials c);
+    Call<Void> signUp(@Body CompleteCredentials c);
 }

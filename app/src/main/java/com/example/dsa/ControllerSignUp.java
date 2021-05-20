@@ -1,8 +1,9 @@
 package com.example.dsa;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import com.example.dsa.models.CompleteCredentials;
-import com.example.dsa.models.Credentials;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -14,11 +15,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ControllerSignUp implements Callback<CompleteCredentials> {
+public class ControllerSignUp implements Callback<Void> {
 
     static final String BASE_URL = "http://10.0.2.2:8080/";
+    Toast t;
+    MainActivity main;
 
-    public void start(CompleteCredentials c) {
+    public void start(MainActivity main, CompleteCredentials c) {
+
+        this.main = main;
+        this.t = main.toast;
+
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -35,23 +42,24 @@ public class ControllerSignUp implements Callback<CompleteCredentials> {
 
         Server server = retrofit.create(Server.class);
 
-        Call<CompleteCredentials> call = server.signUp(c);
+        Call<Void> call = server.signUp(c);
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<CompleteCredentials> call, Response<CompleteCredentials> response) {
+    public void onResponse(Call<Void> call, Response<Void> response) {
         if(response.isSuccessful()) {
             System.out.println("Sign up successful!");
-            //Snackbar snackbar = Snackbar.make(v, "Sign up successful!", 5);
+            Toast.makeText(main.getApplicationContext(), "Sign up successful!", Toast.LENGTH_LONG).show();
         } else {
             System.out.println("Error: " + response.errorBody());
-            //Snackbar snackbar = Snackbar.make(v, "Log in successful!", 5);
+            Toast.makeText(main.getApplicationContext(), "Error. Username does already exist.", Toast.LENGTH_LONG).show();
         }
     }
 
     @Override
-    public void onFailure(Call<CompleteCredentials> call, Throwable t) {
+    public void onFailure(Call<Void> call, Throwable t) {
+        Toast.makeText(main.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
         t.printStackTrace();
     }
 }
