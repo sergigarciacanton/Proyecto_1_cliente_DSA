@@ -6,4 +6,7 @@
     <string name="password">Password</string>
     <string name="name">Name</string>
     <string name="mail">Mail</string>
+    <string name="not_created_yet">Not created yet</string>
+    <string name="main_menu">Main menu</string>
+    <string name="exit">Exit</string>
 </resources>

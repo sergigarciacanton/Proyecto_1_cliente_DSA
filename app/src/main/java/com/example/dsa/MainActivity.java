@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         mailIn.setVisibility(View.INVISIBLE);
         nameText.setVisibility(View.INVISIBLE);
         mailText.setVisibility(View.INVISIBLE);
+        loginBtn.setText("Log in");
     }
 
     public void logInBtn_Click(View v) {

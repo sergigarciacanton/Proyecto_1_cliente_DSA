@@ -1,11 +1,9 @@
 package com.example.dsa;
 
 import android.content.Intent;
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.dsa.models.Credentials;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -17,17 +15,15 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ControllerLogin implements Callback<Void> {
+public class ControllerLogOut implements Callback<Void> {
 
     static final String BASE_URL = "http://10.0.2.2:8080/";
     Toast t;
-    MainActivity main;
-    Credentials c;
+    MainMenu menu;
 
-    public void start(MainActivity main, Credentials c) {
-        this.main = main;
-        this.t = main.toast;
-        this.c = c;
+    public void start(MainMenu menu, Credentials c) {
+        this.menu = menu;
+        this.t = menu.toast;
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -45,28 +41,25 @@ public class ControllerLogin implements Callback<Void> {
 
         Server server = retrofit.create(Server.class);
 
-        Call<Void> call = server.login(c);
+        Call<Void> call = server.logout(c);
         call.enqueue(this);
     }
 
     @Override
     public void onResponse(Call<Void> call, Response<Void> response) {
         if(response.isSuccessful()) {
-            System.out.println("Login successful!");
-            Toast.makeText(main.getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(main, MainMenu.class);
-            intent.putExtra("username", c.getUsername());
-            intent.putExtra("password", c.getPassword());
-            main.startActivity(intent);
+            System.out.println("Log Out successful!");
         } else {
             System.out.println("Error: " + response.errorBody());
-            Toast.makeText(main.getApplicationContext(), "Error: Wrong credentials.", Toast.LENGTH_LONG).show();
+            Toast.makeText(menu.getApplicationContext(), "Error while logging out", Toast.LENGTH_LONG).show();
         }
+        menu.finish();
     }
 
     @Override
     public void onFailure(Call<Void> call, Throwable t) {
-        Toast.makeText(main.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
+        Toast.makeText(menu.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
         t.printStackTrace();
+        menu.finish();
     }
 }

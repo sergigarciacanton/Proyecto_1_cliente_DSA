@@ -13,4 +13,7 @@ public interface Server {
 
     @POST("/dsaApp/auth/signup")
     Call<Void> signUp(@Body CompleteCredentials c);
+
+    @POST("/dsaApp/auth/logout")
+    Call<Void> logout(@Body Credentials c);
 }

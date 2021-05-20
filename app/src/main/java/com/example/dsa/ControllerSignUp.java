@@ -1,9 +1,11 @@
 package com.example.dsa;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 
 import com.example.dsa.models.CompleteCredentials;
+import com.example.dsa.models.Credentials;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -20,11 +22,13 @@ public class ControllerSignUp implements Callback<Void> {
     static final String BASE_URL = "http://10.0.2.2:8080/";
     Toast t;
     MainActivity main;
+    Credentials c;
 
     public void start(MainActivity main, CompleteCredentials c) {
 
         this.main = main;
         this.t = main.toast;
+        this.c = new Credentials(c.getUsername(), c.getPassword());
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -51,6 +55,10 @@ public class ControllerSignUp implements Callback<Void> {
         if(response.isSuccessful()) {
             System.out.println("Sign up successful!");
             Toast.makeText(main.getApplicationContext(), "Sign up successful!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(main, MainMenu.class);
+            intent.putExtra("username", c.getUsername());
+            intent.putExtra("password", c.getPassword());
+            main.startActivity(intent);
         } else {
             System.out.println("Error: " + response.errorBody());
             Toast.makeText(main.getApplicationContext(), "Error. Username does already exist.", Toast.LENGTH_LONG).show();
