@@ -1,6 +1,8 @@
 package com.example.dsa;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     Toast toast;
     ProgressBar progressBar;
 
+    String username;
+    String password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +46,35 @@ public class MainActivity extends AppCompatActivity {
         signUpTextView = this.findViewById(R.id.signUpTextView);
         loginBtn = this.findViewById(R.id.logInBtn);
         progressBar = this.findViewById(R.id.progressBar);
-        progressBar.setVisibility(View.INVISIBLE);
-
-        nameIn.setVisibility(View.INVISIBLE);
-        mailIn.setVisibility(View.INVISIBLE);
-        nameText.setVisibility(View.INVISIBLE);
-        mailText.setVisibility(View.INVISIBLE);
         loginBtn.setText("Log in");
+
+        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        username = sh.getString("username", null);
+        password = sh.getString("password", null);
+
+        if(username == null || password == null) {
+            nameIn.setVisibility(View.INVISIBLE);
+            mailIn.setVisibility(View.INVISIBLE);
+            nameText.setVisibility(View.INVISIBLE);
+            mailText.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.INVISIBLE);
+        }
+        else {
+            progressBar.setVisibility(View.VISIBLE);
+            mailText.setVisibility(View.INVISIBLE);
+            nameText.setVisibility(View.INVISIBLE);
+            passwordText.setVisibility(View.INVISIBLE);
+            usernameText.setVisibility(View.INVISIBLE);
+            mailIn.setVisibility(View.INVISIBLE);
+            nameIn.setVisibility(View.INVISIBLE);
+            passwordIn.setVisibility(View.INVISIBLE);
+            usernameIn.setVisibility(View.INVISIBLE);
+            loginBtn.setVisibility(View.INVISIBLE);
+            signUpTextView.setVisibility(View.INVISIBLE);
+            ControllerLogin ctrl = new ControllerLogin();
+            ctrl.start(this, new Credentials(username, password));
+        }
+
     }
 
     public void logInBtn_Click(View v) {
@@ -62,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         usernameIn.setVisibility(View.INVISIBLE);
         loginBtn.setVisibility(View.INVISIBLE);
         signUpTextView.setVisibility(View.INVISIBLE);
+
         if(loginBtn.getText() == "Log in") {
             ControllerLogin ctrl = new ControllerLogin();
             ctrl.start(this, new Credentials(usernameIn.getText().toString(), passwordIn.getText().toString()));

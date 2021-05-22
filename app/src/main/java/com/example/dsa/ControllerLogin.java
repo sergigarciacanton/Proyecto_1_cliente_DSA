@@ -1,6 +1,7 @@
 package com.example.dsa;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Toast;
 
@@ -64,6 +65,14 @@ public class ControllerLogin implements Callback<Void> {
             main.usernameIn.setVisibility(View.VISIBLE);
             main.loginBtn.setVisibility(View.VISIBLE);
             main.signUpTextView.setVisibility(View.VISIBLE);
+
+            SharedPreferences sharedPreferences = main.getSharedPreferences("MySharedPref", 0);
+            SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+            myEdit.putString("username", main.usernameIn.getText().toString());
+            myEdit.putString("password", main.passwordIn.getText().toString());
+            myEdit.apply();
+
             main.startActivity(intent);
         } else {
             System.out.println("Error: " + response.errorBody());

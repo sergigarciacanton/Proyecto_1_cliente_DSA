@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Proyecto_G1_cliente</string>
+    <string name="app_name">UPC RUSH</string>
     <string name="logInBtn">Log in</string>
     <string name="signUpTextView">Sign up</string>
     <string name="username">Username</string>
@@ -9,4 +9,5 @@
     <string name="not_created_yet">Not created yet</string>
     <string name="main_menu">Main menu</string>
     <string name="exit">Exit</string>
+    <string name="textview">Welcome!</string>
 </resources>
