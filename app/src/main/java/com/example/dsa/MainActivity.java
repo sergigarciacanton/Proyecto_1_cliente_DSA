@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,7 +13,9 @@ import com.example.dsa.models.Credentials;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView usernameText;
     TextView usernameIn;
+    TextView passwordText;
     TextView passwordIn;
     TextView nameIn;
     TextView mailIn;
@@ -21,12 +24,15 @@ public class MainActivity extends AppCompatActivity {
     TextView signUpTextView;
     Button loginBtn;
     Toast toast;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        usernameText = this.findViewById(R.id.usernameText);
         usernameIn = this.findViewById(R.id.usernameIn);
+        passwordText = this.findViewById(R.id.passwordText);
         passwordIn = this.findViewById(R.id.passwordIn);
         nameIn = this.findViewById(R.id.nameIn);
         mailIn = this.findViewById(R.id.mailIn);
@@ -34,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         mailText = this.findViewById(R.id.mailText);
         signUpTextView = this.findViewById(R.id.signUpTextView);
         loginBtn = this.findViewById(R.id.logInBtn);
+        progressBar = this.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.INVISIBLE);
 
         nameIn.setVisibility(View.INVISIBLE);
         mailIn.setVisibility(View.INVISIBLE);
@@ -43,6 +51,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logInBtn_Click(View v) {
+        progressBar.setVisibility(View.VISIBLE);
+        mailText.setVisibility(View.INVISIBLE);
+        nameText.setVisibility(View.INVISIBLE);
+        passwordText.setVisibility(View.INVISIBLE);
+        usernameText.setVisibility(View.INVISIBLE);
+        mailIn.setVisibility(View.INVISIBLE);
+        nameIn.setVisibility(View.INVISIBLE);
+        passwordIn.setVisibility(View.INVISIBLE);
+        usernameIn.setVisibility(View.INVISIBLE);
+        loginBtn.setVisibility(View.INVISIBLE);
+        signUpTextView.setVisibility(View.INVISIBLE);
         if(loginBtn.getText() == "Log in") {
             ControllerLogin ctrl = new ControllerLogin();
             ctrl.start(this, new Credentials(usernameIn.getText().toString(), passwordIn.getText().toString()));

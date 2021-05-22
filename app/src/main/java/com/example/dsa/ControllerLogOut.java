@@ -1,6 +1,5 @@
 package com.example.dsa;
 
-import android.content.Intent;
 import android.widget.Toast;
 
 import com.example.dsa.models.Credentials;

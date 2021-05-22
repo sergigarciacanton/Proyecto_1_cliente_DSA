@@ -1,7 +1,7 @@
 package com.example.dsa;
 
-import android.content.Context;
 import android.content.Intent;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.dsa.models.CompleteCredentials;
@@ -58,10 +58,32 @@ public class ControllerSignUp implements Callback<Void> {
             Intent intent = new Intent(main, MainMenu.class);
             intent.putExtra("username", c.getUsername());
             intent.putExtra("password", c.getPassword());
+            main.progressBar.setVisibility(View.INVISIBLE);
+            main.mailText.setVisibility(View.VISIBLE);
+            main.nameText.setVisibility(View.VISIBLE);
+            main.passwordText.setVisibility(View.VISIBLE);
+            main.usernameText.setVisibility(View.VISIBLE);
+            main.mailIn.setVisibility(View.VISIBLE);
+            main.nameIn.setVisibility(View.VISIBLE);
+            main.passwordIn.setVisibility(View.VISIBLE);
+            main.usernameIn.setVisibility(View.VISIBLE);
+            main.loginBtn.setVisibility(View.VISIBLE);
+            main.signUpTextView.setVisibility(View.VISIBLE);
             main.startActivity(intent);
         } else {
             System.out.println("Error: " + response.errorBody());
             Toast.makeText(main.getApplicationContext(), "Error. Username does already exist.", Toast.LENGTH_LONG).show();
+            main.progressBar.setVisibility(View.INVISIBLE);
+            main.mailText.setVisibility(View.VISIBLE);
+            main.nameText.setVisibility(View.VISIBLE);
+            main.passwordText.setVisibility(View.VISIBLE);
+            main.usernameText.setVisibility(View.VISIBLE);
+            main.mailIn.setVisibility(View.VISIBLE);
+            main.nameIn.setVisibility(View.VISIBLE);
+            main.passwordIn.setVisibility(View.VISIBLE);
+            main.usernameIn.setVisibility(View.VISIBLE);
+            main.loginBtn.setVisibility(View.VISIBLE);
+            main.signUpTextView.setVisibility(View.VISIBLE);
         }
     }
 
@@ -69,5 +91,16 @@ public class ControllerSignUp implements Callback<Void> {
     public void onFailure(Call<Void> call, Throwable t) {
         Toast.makeText(main.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
         t.printStackTrace();
+        main.progressBar.setVisibility(View.INVISIBLE);
+        main.mailText.setVisibility(View.VISIBLE);
+        main.nameText.setVisibility(View.VISIBLE);
+        main.passwordText.setVisibility(View.VISIBLE);
+        main.usernameText.setVisibility(View.VISIBLE);
+        main.mailIn.setVisibility(View.VISIBLE);
+        main.nameIn.setVisibility(View.VISIBLE);
+        main.passwordIn.setVisibility(View.VISIBLE);
+        main.usernameIn.setVisibility(View.VISIBLE);
+        main.loginBtn.setVisibility(View.VISIBLE);
+        main.signUpTextView.setVisibility(View.VISIBLE);
     }
 }

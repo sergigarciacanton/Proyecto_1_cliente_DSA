@@ -57,15 +57,36 @@ public class ControllerLogin implements Callback<Void> {
             Intent intent = new Intent(main, MainMenu.class);
             intent.putExtra("username", c.getUsername());
             intent.putExtra("password", c.getPassword());
+            main.progressBar.setVisibility(View.INVISIBLE);
+            main.passwordText.setVisibility(View.VISIBLE);
+            main.usernameText.setVisibility(View.VISIBLE);
+            main.passwordIn.setVisibility(View.VISIBLE);
+            main.usernameIn.setVisibility(View.VISIBLE);
+            main.loginBtn.setVisibility(View.VISIBLE);
+            main.signUpTextView.setVisibility(View.VISIBLE);
             main.startActivity(intent);
         } else {
             System.out.println("Error: " + response.errorBody());
             Toast.makeText(main.getApplicationContext(), "Error: Wrong credentials.", Toast.LENGTH_LONG).show();
+            main.progressBar.setVisibility(View.INVISIBLE);
+            main.passwordText.setVisibility(View.VISIBLE);
+            main.usernameText.setVisibility(View.VISIBLE);
+            main.passwordIn.setVisibility(View.VISIBLE);
+            main.usernameIn.setVisibility(View.VISIBLE);
+            main.loginBtn.setVisibility(View.VISIBLE);
+            main.signUpTextView.setVisibility(View.VISIBLE);
         }
     }
 
     @Override
     public void onFailure(Call<Void> call, Throwable t) {
+        main.progressBar.setVisibility(View.INVISIBLE);
+        main.passwordText.setVisibility(View.VISIBLE);
+        main.usernameText.setVisibility(View.VISIBLE);
+        main.passwordIn.setVisibility(View.VISIBLE);
+        main.usernameIn.setVisibility(View.VISIBLE);
+        main.loginBtn.setVisibility(View.VISIBLE);
+        main.signUpTextView.setVisibility(View.VISIBLE);
         Toast.makeText(main.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
         t.printStackTrace();
     }
