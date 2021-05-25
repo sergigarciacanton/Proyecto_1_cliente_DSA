@@ -14,7 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_G1_cliente"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainMenu"></activity>
+        <activity android:name=".Activity_Statistics"
+            android:theme="@style/ThemeStatistics"/>
+        <activity android:name=".Activity_My_Profile"
+            android:theme="@style/ThemeMyProfile"/>
+        <activity android:name=".Activity_Store"
+            android:theme="@style/ThemeStore"/>
+        <activity android:name=".Activity_My_Items"
+            android:theme="@style/ThemeMyItems"/>
+        <activity android:name=".Activity_New_Game"
+            android:theme="@style/ThemeNewGame"/>
+        <activity android:name=".MainMenu" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

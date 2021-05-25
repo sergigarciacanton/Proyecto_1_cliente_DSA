@@ -1,59 +1,291 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainMenu">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/not_created_yet"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_menu"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16000003" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/exitBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="exitBtn_Click"
-        android:text="@string/exit"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84000003" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/usernameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <RelativeLayout
+                    android:id="@+id/rellayNewGame"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.65"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:background="@color/red">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/imgView1"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:padding="8dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/play_game"
+                            app:tint="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New game"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="14sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/imgView1"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/rellayMyItems"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.55"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:background="@color/lime">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/imgView3"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:padding="8dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/play_game"
+                            app:tint="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="My items"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="14sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/imgView3"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rellayStore"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.65"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:background="@color/green">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/imgView4"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:padding="8dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/play_game"
+                            app:tint="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Store"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="14sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/imgView4"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/rellayMyProfile"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.65"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/imgView5"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:padding="8dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/play_game"
+                            app:tint="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="My profile"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="14sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/imgView5"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rellayStatistics"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.55"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:background="@color/darkblue">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/imgView6"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:padding="8dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/play_game"
+                            app:tint="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Statistics"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="14sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/imgView6"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/rellayLogout"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.55"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:background="@color/yellow">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/imgView7"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:padding="8dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/play_game"
+                            app:tint="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Log out"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="14sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/imgView7"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

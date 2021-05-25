@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ThemeNewGame" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red_dark</item>
+        <item name="colorAccent">@color/red</item>
+    </style>
+
+    <style name="ThemeMyItems" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/lime</item>
+        <item name="colorPrimaryDark">@color/lime_dark</item>
+        <item name="colorAccent">@color/lime</item>
+    </style>
+
+    <style name="ThemeStore" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green_dark</item>
+        <item name="colorAccent">@color/green</item>
+    </style>
+
+    <style name="ThemeMyProfile" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue_dark</item>
+        <item name="colorAccent">@color/blue</item>
+    </style>
+
+    <style name="ThemeStatistics" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/darkblue</item>
+        <item name="colorPrimaryDark">@color/darkblue_dark</item>
+        <item name="colorAccent">@color/darkblue</item>
+    </style>
+</resources>

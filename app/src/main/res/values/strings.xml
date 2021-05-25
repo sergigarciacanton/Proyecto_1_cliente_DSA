@@ -10,4 +10,8 @@
     <string name="main_menu">Main menu</string>
     <string name="exit">Exit</string>
     <string name="textview">Welcome!</string>
+    <string name="new_game">NEW GAME</string>
+    <string name="new_game_image">new game</string>
+    <string name="storageImage">TODO</string>
+    <string name="stroageImage">TODO</string>
 </resources>
