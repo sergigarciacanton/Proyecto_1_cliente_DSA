@@ -16,6 +16,7 @@ public class MainMenu extends AppCompatActivity {
     RelativeLayout rellayNewGame, rellayMyItems, rellayStore, rellayMyProfile, rellayStatistics, rellayLogout;
     Credentials c;
     Toast toast;
+    MainMenu main = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ControllerLogOut ctrl = new ControllerLogOut();
-				ctrl.start(this, c);
+				ctrl.start(main, c);
             }
         });
     }
