@@ -6,4 +6,166 @@
     android:layout_height="match_parent"
     tools:context=".Activity_My_Profile">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-144dp"
+        tools:layout_editor_absoluteY="-220dp">
+
+        <ProgressBar
+            android:id="@+id/profileProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="208dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="100dp" />
+
+        <Button
+            android:id="@+id/returnBtn"
+            android:layout_width="329dp"
+            android:layout_height="61dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="40dp"
+            android:onClick="returnBtn_Click"
+            android:text="@string/logInBtn"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/blue" />
+
+        <TextView
+            android:id="@+id/usernameProfileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="220dp"
+            android:text="@string/username"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nameProfileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usernameProfileText"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="220dp"
+            android:text="@string/name"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mailProfileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameProfileText"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="220dp"
+            android:text="@string/mail"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/titleProfileText"
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="53dp"
+            android:text="@string/profile"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/loadingProfileText"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileProgressBar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="149dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="150dp"
+            android:text="@string/loading"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/usernameProfileOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="150dp"
+            android:text="@string/username"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nameProfileOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usernameProfileOut"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/name"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mailProfileOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameProfileOut"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/mail"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/moneyProfileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mailProfileText"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="220dp"
+            android:text="@string/current_money"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/moneyProfileOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mailProfileOut"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/current_money"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

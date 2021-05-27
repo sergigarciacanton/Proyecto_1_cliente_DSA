@@ -14,4 +14,7 @@
     <string name="new_game_image">new game</string>
     <string name="storageImage">TODO</string>
     <string name="stroageImage">TODO</string>
+    <string name="profile">Profile</string>
+    <string name="loading">Loading...</string>
+    <string name="current_money">Current money</string>
 </resources>
