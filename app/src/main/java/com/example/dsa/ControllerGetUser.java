@@ -58,12 +58,14 @@ public class ControllerGetUser implements Callback<User> {
             activity.moneyOut.setText(String.valueOf(user.getMoney()));
 
             activity.titleTextView.setVisibility(View.VISIBLE);
+            activity.editProfileImage.setVisibility(View.VISIBLE);
             activity.usernameText.setVisibility(View.VISIBLE);
             activity.usernameOut.setVisibility(View.VISIBLE);
             activity.nameText.setVisibility(View.VISIBLE);
             activity.nameOut.setVisibility(View.VISIBLE);
             activity.mailText.setVisibility(View.VISIBLE);
             activity.mailOut.setVisibility(View.VISIBLE);
+            activity.deleteBtn.setVisibility(View.VISIBLE);
             activity.returnBtn.setVisibility(View.VISIBLE);
             activity.moneyOut.setVisibility(View.VISIBLE);
             activity.moneyText.setVisibility(View.VISIBLE);

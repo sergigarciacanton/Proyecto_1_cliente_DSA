@@ -17,4 +17,6 @@
     <string name="profile">Profile</string>
     <string name="loading">Loading...</string>
     <string name="current_money">Current money</string>
+    <string name="returnBtn">Return</string>
+    <string name="delete">Delete account</string>
 </resources>

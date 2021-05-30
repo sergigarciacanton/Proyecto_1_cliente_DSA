@@ -12,6 +12,24 @@
         tools:layout_editor_absoluteX="-144dp"
         tools:layout_editor_absoluteY="-220dp">
 
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="329dp"
+            android:layout_height="61dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="113dp"
+            android:onClick="deleteBtn_Click"
+            android:text="@string/delete"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/red_dark" />
+
         <ProgressBar
             android:id="@+id/profileProgressBar"
             style="?android:attr/progressBarStyle"
@@ -37,7 +55,7 @@
             android:layout_marginRight="40dp"
             android:layout_marginBottom="40dp"
             android:onClick="returnBtn_Click"
-            android:text="@string/logInBtn"
+            android:text="@string/returnBtn"
             android:textSize="18sp"
             android:textStyle="bold"
             app:backgroundTint="@color/blue" />
@@ -166,6 +184,53 @@
             android:text="@string/current_money"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/editProfileImage"
+            android:layout_width="44dp"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:onClick="editProfileImage_Click"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        <EditText
+            android:id="@+id/editProfileUsernameOut"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="140dp"
+            android:layout_marginEnd="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/username" />
+
+        <EditText
+            android:id="@+id/editProfileNameOut"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="224dp"
+            android:layout_marginEnd="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/editProfileMailOut"
+            android:layout_width="179dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="308dp"
+            android:layout_marginEnd="15dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            tools:text="@string/mail" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

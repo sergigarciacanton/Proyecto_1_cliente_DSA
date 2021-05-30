@@ -18,36 +18,10 @@ public class User {
         this.setMoney(money);
     }*/
 
-    public User(String username, String password, int id) {
-        this.setUsername(username);
-        this.setPassword(password);
-        //this.setId(id);
-        this.setMoney(50); //Valor inicial para cada jugador nuevo.
-
-    }
-
-    public User(CompleteCredentials newUsr, int id) {
-        this.setUsername(newUsr.getUsername());
-        this.setPassword(newUsr.getPassword());
-        this.setFullName(newUsr.getFullName());
-        this.setEmail(newUsr.getEmail());
-        //this.setId(id);
-        this.setMoney(50); //Valor inicial para cada jugador nuevo.
-    }
-
-    public User(String username, String password, String fullName, String email) {
-        this.id = 0;
+    public User(String username, String fullName, String email, int money, int id) {
+        this.id = id;
         this.username = username;
-        this.password = password;
-        this.fullName = fullName;
-        this.email = email;
-        this.money = 50;
-    }
-
-    public User(String username, String password, String fullName, String email, int money) {
-        this.id = 0;
-        this.username = username;
-        this.password = password;
+        this.password = null;
         this.fullName = fullName;
         this.email = email;
         this.money = money;

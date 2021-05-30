@@ -20,4 +20,7 @@ public interface Server {
 
     @GET("/dsaApp/user/get/{username}")
     Call<User> getUser(@Path("username") Integer ID);
+
+    @PUT("dsaApp/user/update")
+    Call<Void> updateUser(@Body User u);
 }

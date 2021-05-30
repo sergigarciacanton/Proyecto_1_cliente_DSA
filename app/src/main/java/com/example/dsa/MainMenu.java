@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dsa.models.Credentials;
@@ -38,7 +37,9 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, Activity_New_Game.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+
+
                 startActivity(intent);
             }
         });

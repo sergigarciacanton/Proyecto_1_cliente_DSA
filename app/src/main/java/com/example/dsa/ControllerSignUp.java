@@ -49,6 +49,7 @@ public class ControllerSignUp implements Callback<Integer> {
 
         Call<Integer> call = server.signUp(c);
         call.enqueue(this);
+
     }
 
     @Override
