@@ -24,6 +24,7 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
         String username = getIntent().getStringExtra("username");
         String password = getIntent().getStringExtra("password");
+        int ID = getIntent().getIntExtra("ID", 0);
         c = new Credentials(username, password);
 
         rellayNewGame = this.findViewById(R.id.rellayNewGame);
@@ -64,7 +65,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, Activity_My_Profile.class);
-                intent.putExtra("username", c.getUsername());
+                intent.putExtra("ID", ID);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }

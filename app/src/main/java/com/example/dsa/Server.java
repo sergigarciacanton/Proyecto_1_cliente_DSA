@@ -10,14 +10,14 @@ import retrofit2.http.*;
 
 public interface Server {
     @POST("/dsaApp/auth/login")
-    Call<Void> login(@Body Credentials c);
+    Call<Integer> login(@Body Credentials c);
 
     @POST("/dsaApp/auth/signup")
-    Call<Void> signUp(@Body CompleteCredentials c);
+    Call<Integer> signUp(@Body CompleteCredentials c);
 
     @POST("/dsaApp/auth/logout")
     Call<Void> logout(@Body Credentials c);
 
     @GET("/dsaApp/user/get/{username}")
-    Call<User> getUser(@Path("username") String username);
+    Call<User> getUser(@Path("username") Integer ID);
 }

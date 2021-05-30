@@ -54,10 +54,10 @@ public class Activity_My_Profile extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         loadingTextView.setVisibility(View.VISIBLE);
 
-        String username = getIntent().getStringExtra("username");
+        int ID = getIntent().getIntExtra("ID", 0);
 
         ControllerGetUser ctrl = new ControllerGetUser();
-        ctrl.start(this, username);
+        ctrl.start(this, ID);
     }
 
     public void returnBtn_Click(View v) {

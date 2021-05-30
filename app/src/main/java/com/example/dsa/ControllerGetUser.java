@@ -24,7 +24,7 @@ public class ControllerGetUser implements Callback<User> {
     static final String BASE_URL = "http://10.0.2.2:8080/";
     Activity_My_Profile activity;
 
-    public void start(Activity_My_Profile activity, String username) {
+    public void start(Activity_My_Profile activity, int ID) {
 
         this.activity = activity;
 
@@ -44,7 +44,7 @@ public class ControllerGetUser implements Callback<User> {
 
         Server server = retrofit.create(Server.class);
 
-        Call<User> call = server.getUser(username);
+        Call<User> call = server.getUser(ID);
         call.enqueue(this);
     }
 
