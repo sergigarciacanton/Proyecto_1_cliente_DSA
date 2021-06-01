@@ -23,4 +23,7 @@ public interface Server {
 
     @PUT("dsaApp/user/update")
     Call<Void> updateUser(@Body User u);
+
+    @PUT("dsaApp/user/update/password")
+    Call<Void> updatePassword(@Body User u);
 }

@@ -21,7 +21,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ControllerGetUser implements Callback<User> {
 
-    static final String BASE_URL = "http://10.0.2.2:8080/";
+    //static final String BASE_URL = "http://10.0.2.2:8080/";
+    static final String BASE_URL = "http://192.168.1.41:8080/";
     Activity_My_Profile activity;
 
     public void start(Activity_My_Profile activity, int ID) {
@@ -58,15 +59,28 @@ public class ControllerGetUser implements Callback<User> {
             activity.moneyOut.setText(String.valueOf(user.getMoney()));
 
             activity.titleTextView.setVisibility(View.VISIBLE);
+            activity.titleTextView.setText("Profile");
             activity.editProfileImage.setVisibility(View.VISIBLE);
+            activity.editProfileImage.setImageResource(R.drawable.pencil_edit);
             activity.usernameText.setVisibility(View.VISIBLE);
+            activity.usernameText.setText("Username");
             activity.usernameOut.setVisibility(View.VISIBLE);
+            activity.usernameEdit.setVisibility(View.INVISIBLE);
+            activity.nameText.setText("Name");
             activity.nameText.setVisibility(View.VISIBLE);
             activity.nameOut.setVisibility(View.VISIBLE);
+            activity.nameEdit.setVisibility(View.INVISIBLE);
+            activity.mailText.setText("Mail");
             activity.mailText.setVisibility(View.VISIBLE);
             activity.mailOut.setVisibility(View.VISIBLE);
+            activity.mailEdit.setVisibility(View.INVISIBLE);
+            activity.editPasswordOld.setVisibility(View.INVISIBLE);
+            activity.editPasswordNew1.setVisibility(View.INVISIBLE);
+            activity.editPasswordNew2.setVisibility(View.INVISIBLE);
             activity.deleteBtn.setVisibility(View.VISIBLE);
+            activity.deleteBtn.setText("Delete account");
             activity.returnBtn.setVisibility(View.VISIBLE);
+            activity.returnBtn.setText("Return");
             activity.moneyOut.setVisibility(View.VISIBLE);
             activity.moneyText.setVisibility(View.VISIBLE);
             activity.progressBar.setVisibility(View.INVISIBLE);

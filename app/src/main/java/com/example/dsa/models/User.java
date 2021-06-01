@@ -27,6 +27,15 @@ public class User {
         this.money = money;
     }
 
+    public User(String password,  int id) {
+        this.id = id;
+        this.username = null;
+        this.password = password;
+        this.fullName = null;
+        this.email = null;
+        this.money = 0;
+    }
+
     /*public int getId() {
         return id;
     }

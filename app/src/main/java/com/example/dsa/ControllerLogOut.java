@@ -16,7 +16,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ControllerLogOut implements Callback<Void> {
 
-    static final String BASE_URL = "http://10.0.2.2:8080/";
+    //static final String BASE_URL = "http://10.0.2.2:8080/";
+    static final String BASE_URL = "http://192.168.1.41:8080/";
     Toast t;
     MainMenu menu;
 
