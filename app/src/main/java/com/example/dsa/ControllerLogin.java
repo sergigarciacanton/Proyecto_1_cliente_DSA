@@ -102,7 +102,8 @@ public class ControllerLogin implements Callback<Integer> {
                 myEdit.apply();
 
                 main.startActivity(intent);
-            } else {
+            }
+            else {
                 System.out.println("Error: " + response.errorBody());
                 Toast.makeText(main.getApplicationContext(), "Error: Wrong credentials.", Toast.LENGTH_LONG).show();
                 main.progressBar.setVisibility(View.INVISIBLE);

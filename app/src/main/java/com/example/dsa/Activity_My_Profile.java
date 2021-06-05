@@ -2,6 +2,8 @@ package com.example.dsa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,6 +39,7 @@ public class Activity_My_Profile extends AppCompatActivity {
     TextView loadingTextView;
 
     int id;
+    boolean delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,14 +92,18 @@ public class Activity_My_Profile extends AppCompatActivity {
 
         int ID = getIntent().getIntExtra("ID", 0);
         this.id = ID;
+        delete = false;
 
         ControllerGetUser ctrl = new ControllerGetUser();
         ctrl.start(this, ID);
     }
 
     public void returnBtn_Click(View v) {
-        if(returnBtn.getText() == "Return")
+        if(returnBtn.getText() == "Return") {
+            Intent returnIntent = new Intent();
+            setResult(Activity.RESULT_CANCELED, returnIntent);
             finish();
+        }
         else if (returnBtn.getText() == "Submit changes"){
             titleTextView.setVisibility(View.INVISIBLE);
             editProfileImage.setVisibility(View.INVISIBLE);
@@ -119,7 +126,7 @@ public class Activity_My_Profile extends AppCompatActivity {
             ctrl.start(this, new User(String.valueOf(usernameEdit.getText()), String.valueOf(nameEdit.getText()),
                     String.valueOf(mailEdit.getText()), Integer.parseInt(String.valueOf(moneyOut.getText())), id));
         }
-        else {
+        else if (returnBtn.getText() == "Update password") {
             String text1 = String.valueOf(editPasswordNew1.getText());
             String text2 = String.valueOf(editPasswordNew2.getText());
             if(text1.equals(text2)) {
@@ -145,6 +152,26 @@ public class Activity_My_Profile extends AppCompatActivity {
             }
             else
                 Toast.makeText(getApplicationContext(), "Error: New passwords are different. Try again.", Toast.LENGTH_LONG).show();
+        }
+        else {
+            titleTextView.setText("Profile");
+            editProfileImage.setVisibility(View.VISIBLE);
+            usernameText.setText("Username");
+            usernameOut.setVisibility(View.VISIBLE);
+            usernameEdit.setVisibility(View.INVISIBLE);
+            nameText.setVisibility(View.VISIBLE);
+            nameOut.setVisibility(View.VISIBLE);
+            nameEdit.setVisibility(View.INVISIBLE);
+            mailText.setVisibility(View.VISIBLE);
+            mailOut.setVisibility(View.VISIBLE);
+            mailEdit.setVisibility(View.INVISIBLE);
+            moneyOut.setVisibility(View.VISIBLE);
+            moneyText.setVisibility(View.VISIBLE);
+            editPasswordOld.setVisibility(View.INVISIBLE);
+            editPasswordNew1.setVisibility(View.INVISIBLE);
+            editPasswordNew2.setVisibility(View.INVISIBLE);
+            returnBtn.setText("Return");
+            delete = false;
         }
     }
 
@@ -189,9 +216,18 @@ public class Activity_My_Profile extends AppCompatActivity {
     }
 
     public void deleteBtn_Click (View v) {
-        if(returnBtn.getText() == "Return")
-            Toast.makeText(getApplicationContext(), "Ooops... not implemented.", Toast.LENGTH_LONG).show();
-        else if (returnBtn.getText() == "Submit changes"){
+        if(returnBtn.getText() == "Return") {
+            if(!delete) {
+                delete = true;
+                Toast.makeText(getApplicationContext(), "Delete permanently this account? Click again.", Toast.LENGTH_LONG).show();
+            }
+            else {
+                ControllerDeleteUser ctrl = new ControllerDeleteUser();
+                ctrl.start(this, id);
+            }
+
+        }
+        else if (returnBtn.getText() == "Submit changes") {
             titleTextView.setText("Profile");
             editProfileImage.setImageResource(R.drawable.pencil_edit);
             usernameOut.setVisibility(View.VISIBLE);
@@ -205,7 +241,7 @@ public class Activity_My_Profile extends AppCompatActivity {
             returnBtn.setText("Return");
             deleteBtn.setText("Delete account");
         }
-        else {
+        else if (returnBtn.getText() == "Update password") {
             titleTextView.setText("Edit profile");
             editProfileImage.setImageResource(R.drawable.key);
             editProfileImage.setVisibility(View.VISIBLE);

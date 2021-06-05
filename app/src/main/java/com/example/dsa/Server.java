@@ -26,4 +26,7 @@ public interface Server {
 
     @PUT("dsaApp/user/update/password")
     Call<Void> updatePassword(@Body User u);
+
+    @DELETE("dsaApp/user/delete/{username}")
+    Call<Void> deleteUser(@Path("username") Integer ID);
 }

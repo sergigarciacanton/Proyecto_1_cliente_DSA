@@ -2,6 +2,7 @@ package com.example.dsa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -68,7 +69,7 @@ public class MainMenu extends AppCompatActivity {
                 Intent intent = new Intent(MainMenu.this, Activity_My_Profile.class);
                 intent.putExtra("ID", ID);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -88,5 +89,12 @@ public class MainMenu extends AppCompatActivity {
 				ctrl.start(main, c);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) finish();
     }
 }
