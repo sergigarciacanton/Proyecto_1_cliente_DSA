@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/logInBtn"
+            android:id="@+id/loginBtn"
             android:layout_width="329dp"
             android:layout_height="61dp"
             android:layout_alignParentStart="true"
@@ -35,7 +35,7 @@
             android:id="@+id/signUpTextView"
             android:layout_width="332dp"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/logInBtn"
+            android:layout_above="@+id/loginBtn"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentEnd="true"
@@ -52,10 +52,10 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/passwordIn"
+            android:id="@+id/loginPasswordIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/usernameIn"
+            android:layout_below="@+id/loginUsernameIn"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="40dp"
@@ -65,10 +65,10 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/mailIn"
+            android:id="@+id/loginMailIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nameIn"
+            android:layout_below="@+id/loginNameIn"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="40dp"
@@ -78,10 +78,10 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/nameIn"
+            android:id="@+id/loginNameIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/passwordIn"
+            android:layout_below="@+id/loginPasswordIn"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="40dp"
@@ -91,7 +91,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/usernameIn"
+            android:id="@+id/loginUsernameIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -104,63 +104,63 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/usernameText"
+            android:id="@+id/loginUsernameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="110dp"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
-            android:layout_toStartOf="@+id/usernameIn"
-            android:layout_toLeftOf="@+id/usernameIn"
+            android:layout_toStartOf="@+id/loginUsernameIn"
+            android:layout_toLeftOf="@+id/loginUsernameIn"
             android:text="@string/username"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/passwordText"
+            android:id="@+id/loginPasswordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/usernameText"
+            android:layout_below="@+id/loginUsernameText"
             android:layout_marginTop="60dp"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
-            android:layout_toStartOf="@+id/passwordIn"
-            android:layout_toLeftOf="@+id/passwordIn"
+            android:layout_toStartOf="@+id/loginPasswordIn"
+            android:layout_toLeftOf="@+id/loginPasswordIn"
             android:text="@string/password"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/nameText"
+            android:id="@+id/loginNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/passwordText"
+            android:layout_below="@+id/loginPasswordText"
             android:layout_marginTop="60dp"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
-            android:layout_toStartOf="@+id/nameIn"
-            android:layout_toLeftOf="@+id/nameIn"
+            android:layout_toStartOf="@+id/loginNameIn"
+            android:layout_toLeftOf="@+id/loginNameIn"
             android:text="@string/name"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/mailText"
+            android:id="@+id/loginMailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nameText"
+            android:layout_below="@+id/loginNameText"
             android:layout_marginTop="60dp"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
-            android:layout_toStartOf="@+id/mailIn"
-            android:layout_toLeftOf="@+id/mailIn"
+            android:layout_toStartOf="@+id/loginMailIn"
+            android:layout_toLeftOf="@+id/loginMailIn"
             android:text="@string/mail"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/loginProgressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

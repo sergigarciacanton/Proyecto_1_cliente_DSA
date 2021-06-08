@@ -2,7 +2,10 @@ package com.example.dsa;
 
 import com.example.dsa.models.CompleteCredentials;
 import com.example.dsa.models.Credentials;
+import com.example.dsa.models.FullObject;
 import com.example.dsa.models.User;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.*;
@@ -29,4 +32,7 @@ public interface Server {
 
     @DELETE("dsaApp/user/delete/{username}")
     Call<Void> deleteUser(@Path("username") Integer ID);
+
+    @GET("/dsaApp/object/get/{id}")
+    Call<List<FullObject>> getObjects(@Path("id") Integer id);
 }

@@ -2,8 +2,6 @@ package com.example.dsa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -37,17 +35,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        usernameText = this.findViewById(R.id.usernameText);
-        usernameIn = this.findViewById(R.id.usernameIn);
-        passwordText = this.findViewById(R.id.passwordText);
-        passwordIn = this.findViewById(R.id.passwordIn);
-        nameIn = this.findViewById(R.id.nameIn);
-        mailIn = this.findViewById(R.id.mailIn);
-        nameText = this.findViewById(R.id.nameText);
-        mailText = this.findViewById(R.id.mailText);
+        usernameText = this.findViewById(R.id.loginUsernameText);
+        usernameIn = this.findViewById(R.id.loginUsernameIn);
+        passwordText = this.findViewById(R.id.loginPasswordText);
+        passwordIn = this.findViewById(R.id.loginPasswordIn);
+        nameIn = this.findViewById(R.id.loginNameIn);
+        mailIn = this.findViewById(R.id.loginMailIn);
+        nameText = this.findViewById(R.id.loginNameText);
+        mailText = this.findViewById(R.id.loginMailText);
         signUpTextView = this.findViewById(R.id.signUpTextView);
-        loginBtn = this.findViewById(R.id.logInBtn);
-        progressBar = this.findViewById(R.id.progressBar);
+        loginBtn = this.findViewById(R.id.loginBtn);
+        progressBar = this.findViewById(R.id.loginProgressBar);
         loginBtn.setText("Log in");
 
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
