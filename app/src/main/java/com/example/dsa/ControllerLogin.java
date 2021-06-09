@@ -22,11 +22,11 @@ public class ControllerLogin implements Callback<Integer> {
 
     //static final String BASE_URL = "http://10.0.2.2:8080/";
     static final String BASE_URL = "http://192.168.1.41:8080/";
-    MainActivity main;
+    Activity_Login main;
     Activity_My_Profile activity;
     Credentials c;
 
-    public void start(MainActivity main, Credentials c) {
+    public void start(Activity_Login main, Credentials c) {
         this.main = main;
         this.activity = null;
         this.c = c;
@@ -82,7 +82,7 @@ public class ControllerLogin implements Callback<Integer> {
             if (response.isSuccessful()) {
                 System.out.println("Login successful!");
                 Toast.makeText(main.getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(main, MainMenu.class);
+                Intent intent = new Intent(main, Activity_Dashboard.class);
                 intent.putExtra("username", c.getUsername());
                 intent.putExtra("password", c.getPassword());
                 intent.putExtra("ID", response.body());

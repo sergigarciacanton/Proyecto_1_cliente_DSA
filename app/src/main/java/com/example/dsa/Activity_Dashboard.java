@@ -11,17 +11,17 @@ import android.widget.Toast;
 
 import com.example.dsa.models.Credentials;
 
-public class MainMenu extends AppCompatActivity {
+public class Activity_Dashboard extends AppCompatActivity {
 
     RelativeLayout rellayNewGame, rellayMyItems, rellayStore, rellayMyProfile, rellayStatistics, rellayLogout;
     Credentials c;
     Toast toast;
-    MainMenu main = this;
+    Activity_Dashboard main = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_dashboard);
         String username = getIntent().getStringExtra("username");
         String password = getIntent().getStringExtra("password");
         int ID = getIntent().getIntExtra("ID", 0);
@@ -37,10 +37,7 @@ public class MainMenu extends AppCompatActivity {
         rellayNewGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, Activity_New_Game.class);
-
-
-
+                Intent intent = new Intent(Activity_Dashboard.this, Activity_New_Game.class);
                 startActivity(intent);
             }
         });
@@ -48,7 +45,7 @@ public class MainMenu extends AppCompatActivity {
         rellayMyItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, Activity_My_Items.class);
+                Intent intent = new Intent(Activity_Dashboard.this, Activity_My_Items.class);
                 intent.putExtra("ID", ID);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
@@ -58,7 +55,7 @@ public class MainMenu extends AppCompatActivity {
         rellayStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, Activity_Store.class);
+                Intent intent = new Intent(Activity_Dashboard.this, Activity_Store.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
@@ -67,7 +64,7 @@ public class MainMenu extends AppCompatActivity {
         rellayMyProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, Activity_My_Profile.class);
+                Intent intent = new Intent(Activity_Dashboard.this, Activity_My_Profile.class);
                 intent.putExtra("ID", ID);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivityForResult(intent, 1);
@@ -77,7 +74,7 @@ public class MainMenu extends AppCompatActivity {
         rellayStatistics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, Activity_Statistics.class);
+                Intent intent = new Intent(Activity_Dashboard.this, Activity_Statistics.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }

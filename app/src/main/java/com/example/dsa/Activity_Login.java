@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.dsa.models.CompleteCredentials;
 import com.example.dsa.models.Credentials;
 
-public class MainActivity extends AppCompatActivity {
+public class Activity_Login extends AppCompatActivity {
 
     TextView usernameText;
     TextView usernameIn;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         usernameText = this.findViewById(R.id.loginUsernameText);
         usernameIn = this.findViewById(R.id.loginUsernameIn);
         passwordText = this.findViewById(R.id.loginPasswordText);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         username = sh.getString("username", null);
         password = sh.getString("password", null);
 
-        if(username == null || password == null) {
+        if(username == null || password == null || username == "" || password == "") {
             nameIn.setVisibility(View.INVISIBLE);
             mailIn.setVisibility(View.INVISIBLE);
             nameText.setVisibility(View.INVISIBLE);

@@ -19,4 +19,11 @@
     <string name="current_money">Current money</string>
     <string name="returnBtn">Return</string>
     <string name="delete">Delete account</string>
+    <string name="current_items">Current items</string>
+    <string name="specifications">Specifications</string>
+    <string name="quantity">Quantity</string>
+    <string name="hp">HP</string>
+    <string name="attack">Attack</string>
+    <string name="defense">Defense</string>
+    <string name="price">Price</string>
 </resources>

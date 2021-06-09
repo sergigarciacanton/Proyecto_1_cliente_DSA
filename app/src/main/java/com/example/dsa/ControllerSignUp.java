@@ -22,10 +22,10 @@ public class ControllerSignUp implements Callback<Integer> {
 
     static final String BASE_URL = "http://192.168.1.41:8080/";
     Toast t;
-    MainActivity main;
+    Activity_Login main;
     Credentials c;
 
-    public void start(MainActivity main, CompleteCredentials c) {
+    public void start(Activity_Login main, CompleteCredentials c) {
 
         this.main = main;
         this.t = main.toast;
@@ -57,7 +57,7 @@ public class ControllerSignUp implements Callback<Integer> {
         if(response.isSuccessful()) {
             System.out.println("Sign up successful!");
             Toast.makeText(main.getApplicationContext(), "Sign up successful!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(main, MainMenu.class);
+            Intent intent = new Intent(main, Activity_Dashboard.class);
             intent.putExtra("username", c.getUsername());
             intent.putExtra("password", c.getPassword());
             intent.putExtra("ID", response.body());

@@ -4,26 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.example.dsa.models.Credentials;
 import com.example.dsa.models.FullObject;
-import com.example.dsa.models.User;
 
 import java.util.List;
 
 public class Activity_My_Items extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    ItemsAdapter adapter;
+    AdapterItems adapter;
     private RecyclerView.LayoutManager layoutManager;
 
     ProgressBar progressBar;
+    TextView titleText;
 
     int id;
     List<FullObject> objectsList;
@@ -34,8 +31,10 @@ public class Activity_My_Items extends AppCompatActivity {
         setContentView(R.layout.activity_my_items);
         recyclerView = findViewById(R.id.my_recycler_view);
         progressBar = findViewById(R.id.itemsProgressBar);
+        titleText = findViewById(R.id.itemsTitleText);
 
         progressBar.setVisibility(View.VISIBLE);
+        titleText.setVisibility(View.INVISIBLE);
         this.id = getIntent().getIntExtra("ID", 0);
 
         recyclerView.setHasFixedSize(true);
@@ -45,7 +44,7 @@ public class Activity_My_Items extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // Set the adapter
-        adapter = new ItemsAdapter();
+        adapter = new AdapterItems();
         recyclerView.setAdapter(adapter);
 
         ControllerGetObjects ctrl = new ControllerGetObjects();

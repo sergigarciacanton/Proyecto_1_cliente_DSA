@@ -92,7 +92,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/play_game"
+                            android:src="@drawable/storage"
                             app:tint="@color/white"/>
 
                         <TextView
@@ -131,7 +131,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/play_game"
+                            android:src="@drawable/store"
                             app:tint="@color/white"/>
 
                         <TextView
@@ -178,7 +178,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/play_game"
+                            android:src="@drawable/profile"
                             app:tint="@color/white"/>
 
                         <TextView
@@ -217,7 +217,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/play_game"
+                            android:src="@drawable/stats"
                             app:tint="@color/white"/>
 
                         <TextView
@@ -264,7 +264,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/play_game"
+                            android:src="@drawable/logout"
                             app:tint="@color/white"/>
 
                         <TextView

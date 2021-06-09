@@ -1,6 +1,8 @@
 package com.example.dsa.models;
 
-public class FullObject {
+import java.io.Serializable;
+
+public class FullObject implements Serializable {
 
     int id;
     String name;
@@ -13,8 +15,7 @@ public class FullObject {
 
     public FullObject() {}
 
-    public FullObject(int id, String name, int attack, int defense, int life, int price, String imageURL, int quantity)
-    {
+    public FullObject(int id, String name, int attack, int defense, int life, int price, String imageURL, int quantity) {
         this.id = id;
         this.name = name;
         this.attack = attack;
