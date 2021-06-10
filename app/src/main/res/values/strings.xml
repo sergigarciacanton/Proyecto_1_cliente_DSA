@@ -26,4 +26,10 @@
     <string name="attack">Attack</string>
     <string name="defense">Defense</string>
     <string name="price">Price</string>
+    <string name="historial_played_games">Historial - Played games</string>
+    <string name="duration">Duration</string>
+    <string name="result">Result</string>
+    <string name="score">Score</string>
+    <string name="id">Game ID</string>
+    <string name="advanced_statistics">Advanced statistics</string>
 </resources>

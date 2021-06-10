@@ -65,6 +65,7 @@ public class Activity_Dashboard extends AppCompatActivity {
 
         dashboardStatistics.setOnClickListener(v -> {
             Intent intent = new Intent(Activity_Dashboard.this, Activity_Statistics.class);
+            intent.putExtra("ID", ID);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         });

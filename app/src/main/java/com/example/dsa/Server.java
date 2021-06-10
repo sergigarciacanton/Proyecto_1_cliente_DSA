@@ -3,6 +3,7 @@ package com.example.dsa;
 import com.example.dsa.models.CompleteCredentials;
 import com.example.dsa.models.Credentials;
 import com.example.dsa.models.FullObject;
+import com.example.dsa.models.Game;
 import com.example.dsa.models.User;
 
 import java.util.List;
@@ -35,4 +36,7 @@ public interface Server {
 
     @GET("/dsaApp/object/get/{id}")
     Call<List<FullObject>> getObjects(@Path("id") Integer id);
+
+    @GET("/dsaApp/game/get/user/{id}")
+    Call<List<Game>> getGames(@Path("id") Integer id);
 }
