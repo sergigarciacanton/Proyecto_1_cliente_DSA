@@ -52,7 +52,7 @@ public class ControllerGetObjects implements Callback<List<FullObject>> {
         if(response.isSuccessful()) {
             activity.objectsList = response.body();
             activity.progressBar.setVisibility(View.INVISIBLE);
-            activity.titleText.setVisibility(View.INVISIBLE);
+            activity.titleText.setVisibility(View.VISIBLE);
             activity.adapter.setData(response.body());
         }
         else {

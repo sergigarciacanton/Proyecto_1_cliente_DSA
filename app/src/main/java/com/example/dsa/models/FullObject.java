@@ -15,17 +15,6 @@ public class FullObject implements Serializable {
 
     public FullObject() {}
 
-    public FullObject(int id, String name, int attack, int defense, int life, int price, String imageURL, int quantity) {
-        this.id = id;
-        this.name = name;
-        this.attack = attack;
-        this.defense = defense;
-        this.life = life;
-        this.price = price;
-        this.imageURL = imageURL;
-        this.quantity = quantity;
-    }
-
     public int getId()
     {
         return this.id;

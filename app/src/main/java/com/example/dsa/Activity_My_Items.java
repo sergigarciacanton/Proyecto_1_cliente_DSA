@@ -29,7 +29,7 @@ public class Activity_My_Items extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_items);
-        recyclerView = findViewById(R.id.my_recycler_view);
+        recyclerView = findViewById(R.id.itemsRecyclerView);
         progressBar = findViewById(R.id.itemsProgressBar);
         titleText = findViewById(R.id.itemsTitleText);
 

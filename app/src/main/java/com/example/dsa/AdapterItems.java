@@ -1,7 +1,6 @@
 package com.example.dsa;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dsa.models.FullObject;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,7 +77,7 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
                 int i = 0;
                 boolean found = false;
                 while(i < values.size() && !found) {
-                    if(values.get(i).getName().equals(holder.txtHeader.getText())) found = true;
+                    if(values.get(i).getName().contentEquals(holder.txtHeader.getText())) found = true;
                     else i++;
                 }
                 if(found) {
@@ -98,9 +96,7 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
 
         holder.txtFooter.setText("Quantity: " + c.getQuantity());
 
-        Picasso.with(holder.icon.getContext())
-                .load(c.getImageURL())
-                .into(holder.icon);
+        Picasso.with(holder.icon.getContext()).load(c.getImageURL()).into(holder.icon);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

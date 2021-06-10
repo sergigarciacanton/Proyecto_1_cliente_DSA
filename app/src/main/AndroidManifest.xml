@@ -24,9 +24,6 @@
             android:name=".Activity_My_Profile"
             android:theme="@style/ThemeMyProfile" />
         <activity
-            android:name=".Activity_Store"
-            android:theme="@style/ThemeStore" />
-        <activity
             android:name=".Activity_My_Items"
             android:theme="@style/ThemeMyItems" />
         <activity
