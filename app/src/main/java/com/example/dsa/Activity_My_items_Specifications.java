@@ -11,14 +11,6 @@ import com.squareup.picasso.Picasso;
 
 public class Activity_My_items_Specifications extends AppCompatActivity {
 
-    private String name;
-    private String imageURL;
-    private String quantity;
-    private String attack;
-    private String defense;
-    private String life;
-    private String price;
-
     TextView nameOut;
     TextView quantityOut;
     TextView lifeOut;
@@ -40,13 +32,13 @@ public class Activity_My_items_Specifications extends AppCompatActivity {
         priceOut = findViewById(R.id.itemsSpecificationsPriceOut);
         imageOut = findViewById(R.id.itemsSpecificationsImage);
 
-        this.name = getIntent().getStringExtra("name");
-        this.quantity = getIntent().getStringExtra("quantity");
-        this.imageURL = getIntent().getStringExtra("image");
-        this.life = getIntent().getStringExtra("life");
-        this.attack = getIntent().getStringExtra("attack");
-        this.defense = getIntent().getStringExtra("defense");
-        this.price = getIntent().getStringExtra("price");
+        String name = getIntent().getStringExtra("name");
+        String quantity = getIntent().getStringExtra("quantity");
+        String imageURL = getIntent().getStringExtra("image");
+        String life = getIntent().getStringExtra("life");
+        String attack = getIntent().getStringExtra("attack");
+        String defense = getIntent().getStringExtra("defense");
+        String price = getIntent().getStringExtra("price");
 
         nameOut.setText(name);
         quantityOut.setText(quantity);

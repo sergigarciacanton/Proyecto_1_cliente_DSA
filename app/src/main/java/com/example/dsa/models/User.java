@@ -1,22 +1,12 @@
 package com.example.dsa.models;
 
 public class User {
-    //private int id;
     private int id;
     private String username;
     private String password;
     private String fullName;
     private String email;
     private int money;
-    //private List<Object> objectsList;
-    //private List<Game> gamesList;
-
-    /*public Player(int idPlayer, String username, String password, double money) {
-        this.setIdPlayer(idPlayer);
-        this.setUsername(username);
-        this.setPassword(password);
-        this.setMoney(money);
-    }*/
 
     public User(String username, String fullName, String email, int money, int id) {
         this.id = id;
@@ -35,14 +25,6 @@ public class User {
         this.email = null;
         this.money = 0;
     }
-
-    /*public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }*/
 
     public String getUsername() {
         return username;
@@ -68,26 +50,6 @@ public class User {
         this.money = money;
     }
 
-    /*public List<Object> getObjectsList() {
-        return objectsList;
-    }
-
-    public void setObjectsList(List<Object> objectsList) {
-        this.objectsList = objectsList;
-    }
-
-    public List<Game> getGamesList() {
-        return gamesList;
-    }
-
-    public void setGamesList(List<Game> gamesList) {
-        this.gamesList = gamesList;
-    }*/
-
-    /*public String toString() {
-        return id + ", " + username;
-    }*/
-
     public String getFullName() {
         return fullName;
     }
@@ -96,7 +58,6 @@ public class User {
         this.fullName = fullName;
     }
 
-
     public String getEmail() {
         return email;
     }
@@ -104,4 +65,10 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) { this.id = id;}
 }

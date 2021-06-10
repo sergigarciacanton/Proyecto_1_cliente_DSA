@@ -52,7 +52,7 @@ public class Activity_Login extends AppCompatActivity {
         username = sh.getString("username", null);
         password = sh.getString("password", null);
 
-        if(username == null || password == null || username == "" || password == "") {
+        if(username == null || password == null || username.equals("") || password.equals("")) {
             nameIn.setVisibility(View.INVISIBLE);
             mailIn.setVisibility(View.INVISIBLE);
             nameText.setVisibility(View.INVISIBLE);

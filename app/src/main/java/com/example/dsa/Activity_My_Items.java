@@ -15,9 +15,7 @@ import java.util.List;
 
 public class Activity_My_Items extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
     AdapterItems adapter;
-    private RecyclerView.LayoutManager layoutManager;
 
     ProgressBar progressBar;
     TextView titleText;
@@ -29,7 +27,7 @@ public class Activity_My_Items extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_items);
-        recyclerView = findViewById(R.id.itemsRecyclerView);
+        RecyclerView recyclerView = findViewById(R.id.itemsRecyclerView);
         progressBar = findViewById(R.id.itemsProgressBar);
         titleText = findViewById(R.id.itemsTitleText);
 
@@ -40,7 +38,7 @@ public class Activity_My_Items extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        layoutManager = new LinearLayoutManager(Activity_My_Items.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Activity_My_Items.this);
         recyclerView.setLayoutManager(layoutManager);
 
         // Set the adapter

@@ -2,11 +2,11 @@ package com.example.dsa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -14,11 +14,12 @@ import com.example.dsa.models.Credentials;
 
 public class Activity_Dashboard extends AppCompatActivity {
 
-    RelativeLayout rellayNewGame, rellayMyItems, rellayStore, rellayMyProfile, rellayStatistics, rellayLogout;
+    RelativeLayout dashboardNewGame, dashboardMyItems, dashboardStore, dashboardMyProfile, dashboardStatistics, dashboardLogout;
     Credentials c;
     Toast toast;
     Activity_Dashboard main = this;
 
+    @SuppressLint("QueryPermissionsNeeded")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,67 +29,49 @@ public class Activity_Dashboard extends AppCompatActivity {
         int ID = getIntent().getIntExtra("ID", 0);
         c = new Credentials(username, password);
 
-        rellayNewGame = this.findViewById(R.id.rellayNewGame);
-        rellayMyItems = this.findViewById(R.id.rellayMyItems);
-        rellayStore = this.findViewById(R.id.rellayStore);
-        rellayMyProfile = this.findViewById(R.id.rellayMyProfile);
-        rellayStatistics = this.findViewById(R.id.rellayStatistics);
-        rellayLogout = this.findViewById(R.id.rellayLogout);
+        dashboardNewGame = this.findViewById(R.id.rellayNewGame);
+        dashboardMyItems = this.findViewById(R.id.rellayMyItems);
+        dashboardStore = this.findViewById(R.id.rellayStore);
+        dashboardMyProfile = this.findViewById(R.id.rellayMyProfile);
+        dashboardStatistics = this.findViewById(R.id.rellayStatistics);
+        dashboardLogout = this.findViewById(R.id.rellayLogout);
 
-        rellayNewGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Activity_Dashboard.this, Activity_New_Game.class);
+        dashboardNewGame.setOnClickListener(v -> {
+            Intent intent = new Intent(Activity_Dashboard.this, Activity_New_Game.class);
+            startActivity(intent);
+        });
+
+        dashboardMyItems.setOnClickListener(v -> {
+            Intent intent = new Intent(Activity_Dashboard.this, Activity_My_Items.class);
+            intent.putExtra("ID", ID);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+        });
+
+        dashboardStore.setOnClickListener(v -> {
+            Uri web = Uri.parse("http://192.168.1.41:8080/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, web);
+            if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
         });
 
-        rellayMyItems.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Activity_Dashboard.this, Activity_My_Items.class);
-                intent.putExtra("ID", ID);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-            }
+        dashboardMyProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(Activity_Dashboard.this, Activity_My_Profile.class);
+            intent.putExtra("ID", ID);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivityForResult(intent, 1);
         });
 
-        rellayStore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri webpage = Uri.parse("http://192.168.1.41:8080/");
-                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
-                }
-            }
+        dashboardStatistics.setOnClickListener(v -> {
+            Intent intent = new Intent(Activity_Dashboard.this, Activity_Statistics.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
         });
 
-        rellayMyProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Activity_Dashboard.this, Activity_My_Profile.class);
-                intent.putExtra("ID", ID);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivityForResult(intent, 1);
-            }
-        });
-
-        rellayStatistics.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Activity_Dashboard.this, Activity_Statistics.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-            }
-        });
-
-        rellayLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ControllerLogOut ctrl = new ControllerLogOut();
-				ctrl.start(main, c);
-            }
+        dashboardLogout.setOnClickListener(v -> {
+            ControllerLogOut ctrl = new ControllerLogOut();
+            ctrl.start(main, c);
         });
     }
 

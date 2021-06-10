@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.dsa.models.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

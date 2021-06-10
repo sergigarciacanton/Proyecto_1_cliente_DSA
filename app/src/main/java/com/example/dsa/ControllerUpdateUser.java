@@ -1,12 +1,7 @@
 package com.example.dsa;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.view.View;
 import android.widget.Toast;
 
-import com.example.dsa.models.CompleteCredentials;
-import com.example.dsa.models.Credentials;
 import com.example.dsa.models.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
