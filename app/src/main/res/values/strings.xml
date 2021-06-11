@@ -32,4 +32,8 @@
     <string name="score">Score</string>
     <string name="id">Game ID</string>
     <string name="advanced_statistics">Advanced statistics</string>
+    <string name="games_played">Games played</string>
+    <string name="games_won">Games won</string>
+    <string name="fastest_victory">Fastest victory</string>
+    <string name="maximum_score">Maximum score</string>
 </resources>

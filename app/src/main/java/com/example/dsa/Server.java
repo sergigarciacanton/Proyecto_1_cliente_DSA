@@ -19,9 +19,6 @@ public interface Server {
     @POST("/dsaApp/auth/signup")
     Call<Integer> signUp(@Body CompleteCredentials c);
 
-    @POST("/dsaApp/auth/logout")
-    Call<Void> logout(@Body Credentials c);
-
     @GET("/dsaApp/user/get/{username}")
     Call<User> getUser(@Path("username") Integer ID);
 

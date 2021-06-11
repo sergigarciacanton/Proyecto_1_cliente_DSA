@@ -24,12 +24,12 @@ public class Activity_Statistics_Specifications extends AppCompatActivity {
 
         String id = getIntent().getStringExtra("id");
         String duration = getIntent().getStringExtra("duration");
-        String victory = getIntent().getStringExtra("victory");
+        int victory = Integer.parseInt(getIntent().getStringExtra("victory"));
         String score = getIntent().getStringExtra("score");
 
         idOut.setText(id);
         durationOut.setText(duration + " seconds");
-        if(victory == "0") victoryOut.setText("You lost");
+        if(victory == 0) victoryOut.setText("You lost");
         else victoryOut.setText("You won");
         scoreOut.setText(score + " points");
     }

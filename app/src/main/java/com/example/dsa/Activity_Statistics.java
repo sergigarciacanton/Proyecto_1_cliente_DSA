@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dsa.models.Game;
 
@@ -51,7 +51,28 @@ public class Activity_Statistics extends AppCompatActivity {
     }
 
     public void advancedStatisticsBtn_Click(View v) {
-        Toast.makeText(getApplicationContext(), "Ooops. Not implemented.", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(Activity_Statistics.this, Activity_Statistics_Advanced.class);
+        intent.putExtra("gamesNum", String.valueOf(gamesList.size()));
+        int won = 0;
+        for(Game g : gamesList)
+            if(g.getVictory() == 1) won++;
+        intent.putExtra("gamesWon", String.valueOf(won));
+        int minTime = 0;
+        boolean found = false;
+        for(Game g : gamesList) {
+            if (g.getVictory() == 1 && !found) {
+                found = true;
+                minTime = g.getDuration();
+            }
+            else if (g.getVictory() == 1 && g.getDuration() < minTime)
+                minTime = g.getDuration();
+        }
+        intent.putExtra("minTime", String.valueOf(minTime));
+        int maxScore = 0;
+        for(Game g : gamesList)
+            if (g.getScore() > maxScore) maxScore = g.getScore();
+        intent.putExtra("maxScore", String.valueOf(maxScore));
+        startActivity(intent);
     }
 
     public void returnBtn_Click(View v) {

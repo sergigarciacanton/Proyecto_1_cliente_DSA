@@ -71,8 +71,7 @@ public class Activity_Dashboard extends AppCompatActivity {
         });
 
         dashboardLogout.setOnClickListener(v -> {
-            ControllerLogOut ctrl = new ControllerLogOut();
-            ctrl.start(main, c);
+            finish();
         });
     }
 
