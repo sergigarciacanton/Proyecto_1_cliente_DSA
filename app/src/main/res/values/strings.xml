@@ -36,4 +36,6 @@
     <string name="games_won">Games won</string>
     <string name="fastest_victory">Fastest victory</string>
     <string name="maximum_score">Maximum score</string>
+    <string name="play_game">Play game</string>
+    <string name="choose_items_to_use">Choose items to use</string>
 </resources>

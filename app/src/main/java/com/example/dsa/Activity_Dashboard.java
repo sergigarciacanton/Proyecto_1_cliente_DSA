@@ -16,8 +16,6 @@ public class Activity_Dashboard extends AppCompatActivity {
 
     RelativeLayout dashboardNewGame, dashboardMyItems, dashboardStore, dashboardMyProfile, dashboardStatistics, dashboardLogout;
     Credentials c;
-    Toast toast;
-    Activity_Dashboard main = this;
 
     @SuppressLint("QueryPermissionsNeeded")
     @Override
@@ -38,6 +36,7 @@ public class Activity_Dashboard extends AppCompatActivity {
 
         dashboardNewGame.setOnClickListener(v -> {
             Intent intent = new Intent(Activity_Dashboard.this, Activity_New_Game.class);
+            intent.putExtra("ID", ID);
             startActivity(intent);
         });
 
