@@ -34,6 +34,9 @@ public interface Server {
     @GET("/dsaApp/object/get/{id}")
     Call<List<FullObject>> getObjects(@Path("id") Integer id);
 
+    @PUT("/dsaApp/object/use/{idObject}/user/{idUser}")
+    Call<Void> useObject(@Path("idObject") Integer idObject, @Path("idUser") Integer idUser);
+
     @GET("/dsaApp/game/get/user/{id}")
     Call<List<Game>> getGames(@Path("id") Integer id);
 }

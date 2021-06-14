@@ -58,6 +58,9 @@ public class Activity_New_Game extends AppCompatActivity {
     }
 
     public void playBtn_Click(View v) {
-        Toast.makeText(getApplicationContext(), "Ooops... not implemented.", Toast.LENGTH_SHORT).show();
+        for(int idObject : objectsIdList) {
+            ControllerUseObject ctrl = new ControllerUseObject();
+            ctrl.start(this, idObject, id);
+        }
     }
 }

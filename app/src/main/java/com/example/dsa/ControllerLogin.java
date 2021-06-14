@@ -147,7 +147,7 @@ public class ControllerLogin implements Callback<Integer> {
             main.usernameIn.setVisibility(View.VISIBLE);
             main.loginBtn.setVisibility(View.VISIBLE);
             main.signUpTextView.setVisibility(View.VISIBLE);
-            Toast.makeText(main.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
+            Toast.makeText(main.getApplicationContext(), "Disconnected from server. Try again", Toast.LENGTH_LONG).show();
             t.printStackTrace();
         }
         else {

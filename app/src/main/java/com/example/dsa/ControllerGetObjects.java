@@ -83,7 +83,7 @@ public class ControllerGetObjects implements Callback<List<FullObject>> {
                 activityItems.titleText.setVisibility(View.VISIBLE);
                 activityItems.adapter.setData(response.body());
             } else {
-                Toast.makeText(activityItems.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
+                Toast.makeText(activityItems.getApplicationContext(), "It seems you have no objects.", Toast.LENGTH_LONG).show();
                 activityItems.progressBar.setVisibility(View.INVISIBLE);
             }
         }
@@ -94,7 +94,7 @@ public class ControllerGetObjects implements Callback<List<FullObject>> {
                 activityNewGame.titleText.setVisibility(View.VISIBLE);
                 activityNewGame.adapter.setData(response.body());
             } else {
-                Toast.makeText(activityNewGame.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
+                Toast.makeText(activityNewGame.getApplicationContext(), "It seems you have no objects.", Toast.LENGTH_LONG).show();
                 activityNewGame.progressBar.setVisibility(View.INVISIBLE);
             }
         }

@@ -100,7 +100,7 @@ public class ControllerSignUp implements Callback<Integer> {
 
     @Override
     public void onFailure(Call<Integer> call, Throwable t) {
-        Toast.makeText(main.getApplicationContext(), "Unexpected error.", Toast.LENGTH_LONG).show();
+        Toast.makeText(main.getApplicationContext(), "Disconnected from server. Try again", Toast.LENGTH_LONG).show();
         t.printStackTrace();
         main.progressBar.setVisibility(View.INVISIBLE);
         main.mailText.setVisibility(View.VISIBLE);
