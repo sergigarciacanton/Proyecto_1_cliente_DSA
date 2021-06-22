@@ -35,7 +35,7 @@ android {
 dependencies {
     implementation project(path: ':launcher')
     implementation project(path: ':unityLibrary')
-//    implementation ':launcher-debug'
+//    implementation project(':launcher/build/outputs/aar/launcher-debug')
 
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -47,7 +47,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.0'
-    implementation files('C:\\Users\\Enric\\AndroidStudioProjects\\UnityOutput\\launcher\\build\\outputs\\aar\\launcher-debug.aar')
+
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
