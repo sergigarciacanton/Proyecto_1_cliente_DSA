@@ -18,13 +18,13 @@ ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src
 activity#com.unity3d.player.UnityPlayerActivity
 ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:5-13:16
 	android:screenOrientation
-		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:111-149
+		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:111-148
 	android:launchMode
-		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:150-181
+		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:149-180
 	android:hardwareAccelerated
-		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:364-399
+		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:363-398
 	android:configChanges
-		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:182-363
+		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:181-362
 	android:theme
 		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:69-110
 	android:name

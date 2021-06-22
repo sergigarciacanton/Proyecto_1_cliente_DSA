@@ -1,5 +1,5 @@
 include ':app'
 rootProject.name = "Proyecto_G1_cliente"
+//include ':launcher-debug'
 include ':unityLibrary'
 include ':launcher'
-//include ':launcher-debug'

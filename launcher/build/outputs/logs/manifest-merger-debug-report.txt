@@ -1,18 +1,18 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:1-7:12
-INJECTED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:1-7:12
-INJECTED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:1-7:12
+ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+INJECTED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+INJECTED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
 	package
-		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:70-97
+		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:70-98
 		INJECTED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:98-144
+		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:99-145
 	xmlns:android
 		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:11-69
 	android:installLocation
-		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:145-185
+		ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:3:146-186
 supports-screens
 ADDED from C:\Users\Enric\AndroidStudioProjects\UniRush_Android\launcher\src\main\AndroidManifest.xml:4:3-163
 	android:largeScreens

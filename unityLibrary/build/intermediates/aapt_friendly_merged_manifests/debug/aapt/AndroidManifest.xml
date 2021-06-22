@@ -25,7 +25,7 @@
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
             android:hardwareAccelerated="false"
             android:launchMode="singleTask"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="landscape"
             android:theme="@style/UnityThemeSelector" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,7 +53,7 @@
             android:value="portrait|landscape" />
         <meta-data
             android:name="unity.build-id"
-            android:value="959afef3-6e30-408c-842d-7e1c8ac8484d" />
+            android:value="b8c89781-6a98-4117-827b-6f9ed55b4e49" />
     </application>
 
 </manifest>

@@ -1,2 +1,2 @@
-edu/upc/dsa/unity/BuildConfig.java
- edu.upc.dsa.unity.BuildConfig
+edu/upc/dsa/unity2/BuildConfig.java
+ edu.upc.dsa.unity2.BuildConfig

@@ -40,13 +40,13 @@
 24            android:name="com.unity3d.player.UnityPlayerActivity"
 24-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:15-68
 25            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
-25-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:182-363
+25-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:181-362
 26            android:hardwareAccelerated="false"
-26-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:364-399
+26-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:363-398
 27            android:launchMode="singleTask"
-27-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:150-181
-28            android:screenOrientation="fullSensor"
-28-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:111-149
+27-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:149-180
+28            android:screenOrientation="landscape"
+28-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:111-148
 29            android:theme="@style/UnityThemeSelector" >
 29-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:5:69-110
 30            <intent-filter>
@@ -99,7 +99,7 @@
 54-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:17:5-101
 55            android:name="unity.build-id"
 55-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:17:16-45
-56            android:value="959afef3-6e30-408c-842d-7e1c8ac8484d" />
+56            android:value="b8c89781-6a98-4117-827b-6f9ed55b4e49" />
 56-->C:\Users\Enric\AndroidStudioProjects\UniRush_Android\unityLibrary\src\main\AndroidManifest.xml:17:46-98
 57    </application>
 58
