@@ -20,7 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ControllerSignUp implements Callback<Integer> {
 
-    static final String BASE_URL = "http://192.168.1.41:8080/";
+    static final String BASE_URL = "http://10.0.2.2:8081/";
+    //static final String BASE_URL = "http://192.168.1.41:8080/";
     Toast t;
     Activity_Login main;
     Credentials c;

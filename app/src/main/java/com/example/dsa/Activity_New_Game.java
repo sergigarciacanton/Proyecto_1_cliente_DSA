@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dsa.models.FullObject;
+import com.unity3d.player.UnityPlayerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,5 +64,7 @@ public class Activity_New_Game extends AppCompatActivity {
             ControllerUseObject ctrl = new ControllerUseObject();
             ctrl.start(this, idObject, id);
         }
+        Intent intent = new Intent (this, UnityPlayerActivity.class);
+        startActivity(intent);
     }
 }

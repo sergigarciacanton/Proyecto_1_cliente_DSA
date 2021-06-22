@@ -16,8 +16,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ControllerUpdateUser implements Callback<Void> {
 
-    //static final String BASE_URL = "http://10.0.2.2:8080/";
-    static final String BASE_URL = "http://192.168.1.41:8080/";
+    static final String BASE_URL = "http://10.0.2.2:8081/";
+    //static final String BASE_URL = "http://192.168.1.41:8080/";
     Activity_My_Profile activity;
 
     public void start(Activity_My_Profile activity, User u) {

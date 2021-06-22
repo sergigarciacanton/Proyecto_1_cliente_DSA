@@ -48,7 +48,7 @@ public class Activity_Dashboard extends AppCompatActivity {
         });
 
         dashboardStore.setOnClickListener(v -> {
-            Uri web = Uri.parse("http://192.168.1.41:8080/");
+            Uri web = Uri.parse("http://10.0.2.2:8081/");
             Intent intent = new Intent(Intent.ACTION_VIEW, web);
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
